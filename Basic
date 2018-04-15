@@ -1,0 +1,123 @@
+1). Ist Example:-
+
+#Bad Way:-
+
+cities = ["Delhi", "Mumbai", "Kolkata"]
+
+for city in cities:
+	print(i, city)
+	i+=1
+
+Output:- 
+
+0 Delhi
+1 Mumbai
+2 Kolkata
+
+
+#Good Way:-
+
+for i, city in enumerate(cities):
+	print(i, city)
+
+Output:- 
+
+0 Delhi
+1 Mumbai
+2 Kolkata
+
+2). To print Two list corresponding:
+
+#Bad Way:-
+
+x_list = [1,2,3]
+
+y_list = [2,4,6]
+
+for i in range(len(x_list)):
+	x = x_list[i]
+	y = y_list[i]
+	print(x,y)
+
+Output:- 
+
+1 2
+2 4
+3 6
+
+#Good Way:-
+
+x_list = [1,2,3]
+
+y_list = [2,4,6]
+
+
+for x,y in zip(x_list, y_list):
+	print(x,y)
+
+3). Swapping Two variable values using Temp
+
+#Bad Way:-
+x = 10
+y = -10
+
+print('Before: x = %d, y = %d' % (x,y))
+
+tmp = y
+y = x
+x = tmp
+print('After: x = %d, y = %d' % (x,y))
+
+Output:- 
+
+Before: x = 10, y = -10
+
+After: x = -10, y = 10
+
+#Good Way:-
+
+x,y = 10, -10
+
+print('Before: x = %d, y = %d' % (x,y))
+
+x,y = y,x
+
+print('After: x = %d, y = %d' % (x,y))
+
+Output:- 
+
+Before: x = 10, y = -10
+
+After: x = -10, y = 10
+
+
+4). To check anything in Dictionary or not with condition:
+
+#Bad Way:-
+
+cities = {"Delhi": 3, "Mumbai" : 4, "Kolkata" : 5}
+
+if "Delhi" in cities:
+	city = cities["Delhi"]
+else:
+	city = 'Unknown'
+print("City has %s number" %city)
+
+Output:- 
+
+City has 3 number
+
+#Good Way:-
+
+cities = {"Delhi": 3, "Mumbai" : 4, "Kolkata" : 5}
+
+city = cities.get("Delhi", "Unknown")
+print("City has %s number" %city)
+
+Output:- 
+
+City has 3 number
+
+
+
+
